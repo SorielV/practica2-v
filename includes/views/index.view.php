@@ -31,6 +31,7 @@
 				      <th>Nombre</th>
 				      <!--th>Fecha</th-->
 				      <th>Dirección</th>
+              <th>Teléfono</th>
 				      <th><button ng-click="add()" class="btn btn-success btn-sm"><i class="fa fa-file-o" aria-hidden="true"></i></button>&nbsp;Nuevo</th>
 				    </tr>
 				  </thead>
@@ -40,6 +41,7 @@
 				  			<td>{{ persona.nombre }}</td>
 							  <!--td>{{ persona.fechaCreacion|limitTo:10 }}</td-->
                 <td>{{ persona.direccion }}</td>
+                <td>{{ persona.telefono }}</td>
                 <td>
                   <button class="btn btn-primary btn-sm" ng-click="view(persona.id)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</button> &nbsp;
                   <button class="btn btn-danger btn-sm" ng-click="delete(persona.id)" data-toggle='confirmation' data-singleton='true' data-placement='top'>  <i class="fa fa-times" aria-hidden="true"></i>Borrar</button>
@@ -69,6 +71,12 @@
 		                            <div class="col-md-11">
 		                                <label>Dirección</label>
 		                                <input ng-model="persona.direccion" class="form-control" required>
+		                            </div>
+		                        </div>
+                            <div class="form-group row">
+		                            <div class="col-md-11">
+		                                <label>Teléfono</label>
+		                                <input ng-model="persona.telefono" class="form-control">
 		                            </div>
 		                        </div>
 		                    </div>
