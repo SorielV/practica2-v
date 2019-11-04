@@ -1,6 +1,5 @@
 <?php require_once(VIEW_PATH.'header.inc.php'); ?>
 
-	
 	<link href="<?php echo $url;?>assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<script src="<?php echo $url;?>assets/js/jquery.js"></script>
 	<script src="<?php echo $url;?>assets/js/bootstrap.min.js"></script>
@@ -32,7 +31,7 @@
 				      <!--th>Fecha</th-->
 				      <th>Dirección</th>
               <th>Teléfono</th>
-				      <th><button ng-click="add()" class="btn btn-success btn-sm"><i class="fa fa-file-o" aria-hidden="true"></i></button>&nbsp;Nuevo</th>
+				      <th><button id="add-Personas" ng-click="add()" class="btn btn-success btn-sm"><i class="fa fa-file-o" aria-hidden="true"></i></button>&nbsp;Nuevo</th>
 				    </tr>
 				  </thead>
 				  <tbody>
@@ -43,8 +42,8 @@
                 <td>{{ persona.direccion }}</td>
                 <td>{{ persona.telefono }}</td>
                 <td>
-                  <button class="btn btn-primary btn-sm" ng-click="view(persona.id)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</button> &nbsp;
-                  <button class="btn btn-danger btn-sm" ng-click="delete(persona.id)" data-toggle='confirmation' data-singleton='true' data-placement='top'>  <i class="fa fa-times" aria-hidden="true"></i>Borrar</button>
+                  <button class="btn btn-primary btn-sm btn-view" ng-click="view(persona.id)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</button> &nbsp;
+                  <button class="btn btn-danger btn-sm btn-delete" ng-click="delete(persona.id)" data-toggle='confirmation' data-singleton='true' data-placement='top'>  <i class="fa fa-times" aria-hidden="true"></i>Borrar</button>
                 </td>
 						</tr>
 				  </tbody>
@@ -60,23 +59,23 @@
 		                        <div class="form-group row">
 		                            <div id="personaId" class="col-md-3">
 		                                <label>Id Persona</label>
-		                                <input ng-model="persona.idPersona" class="form-control" disabled>
+		                                <input ng-model="persona.idPersona" name="idPersona" class="form-control" disabled>
 		                            </div>
 		                            <div class="col-md-7">
 		                                <label>Nombre</label>
-		                                <input ng-model="persona.nombre" class="form-control" required>
+		                                <input ng-model="persona.nombre" name="nombre" class="form-control" required>
 		                            </div>
 		                        </div>
 		                        <div class="form-group row">
 		                            <div class="col-md-11">
 		                                <label>Dirección</label>
-		                                <input ng-model="persona.direccion" class="form-control" required>
+		                                <input ng-model="persona.direccion" name="direccion" class="form-control" required>
 		                            </div>
 		                        </div>
                             <div class="form-group row">
 		                            <div class="col-md-11">
 		                                <label>Teléfono</label>
-		                                <input ng-model="persona.telefono" class="form-control">
+		                                <input ng-model="persona.telefono" name="telefono" class="form-control">
 		                            </div>
 		                        </div>
 		                    </div>

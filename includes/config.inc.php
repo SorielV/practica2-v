@@ -1,6 +1,13 @@
 <?php
+define('DIR_VENDOR', $_SERVER['DOCUMENT_ROOT'] . '/vendor/');
+
+require_once(DIR_VENDOR . 'autoload.php');
+
+$dotenv = Dotenv\Dotenv::create($_SERVER['DOCUMENT_ROOT']);
+$dotenv->load();
+
 //Definición de variable global
-$url="http://127.0.0.1/angularJsMvcMysqli/";
+$url= $_ENV['URL'] ?? '/';
 
 //Definir el código de caracteres
 header('Content-Type: text/html; charset=utf-8');
@@ -18,10 +25,10 @@ setlocale(LC_MONETARY, 'en_US');
 ////////////////////////////////////////////////////////////////////////////////
 // Define constants for database connectivty
 ////////////////////////////////////////////////////////////////////////////////
-defined('DATABASE_HOST') ? NULL : define('DATABASE_HOST', 'localhost');
-defined('DATABASE_NAME') ? NULL : define('DATABASE_NAME', 'myInfo');
-defined('DATABASE_USER') ? NULL : define('DATABASE_USER', 'root');
-defined('DATABASE_PASSWORD') ? NULL : define('DATABASE_PASSWORD', 'root');
+defined('DATABASE_HOST') ? NULL : define('DATABASE_HOST', $_ENV['DATABASE_HOST']);
+defined('DATABASE_NAME') ? NULL : define('DATABASE_NAME', $_ENV['DATABASE_NAME']);
+defined('DATABASE_USER') ? NULL : define('DATABASE_USER', $_ENV['DATABASE_USER']);
+defined('DATABASE_PASSWORD') ? NULL : define('DATABASE_PASSWORD', $_ENV['DATABASE_PASSWORD']);
 
 ////////////////////////////////////////////////////////////////////////////////
 // Define absolute application paths
