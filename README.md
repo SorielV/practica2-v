@@ -1,6 +1,6 @@
 ### Trabajos escolares fork from Gitlab
 
-# practica-3-vallejo
+# practica-2-vallejo
 
 ## Issue #1
 
@@ -20,4 +20,5 @@
 
 
 [HerokuApp](https://practica2-v.herokuapp.com/)
+
 [Cypress](https://dashboard.cypress.io/#/projects/7cmhy1/runs)
