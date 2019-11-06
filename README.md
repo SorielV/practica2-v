@@ -1,6 +1,6 @@
 #### Trabajos escolares fork from Gitlab
 
-# practica-2-vallejo
+# practica-2-v
 
 ## Issue #1
 
