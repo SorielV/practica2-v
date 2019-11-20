@@ -1,1 +1,0 @@
-alter table datos add column telefono varchar(25) after direccion;

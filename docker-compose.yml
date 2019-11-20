@@ -1,0 +1,41 @@
+version: '3.3'
+
+services:
+  composer:
+    restart: 'no'
+    image: composer/composer:php7
+    command: install
+    volumes:
+      - ./composer:/app
+      - ./composer.lock:/app/composer.lock
+      - ./composer.json:/app/composer.json
+
+  mysql_db:
+    image: mysql:latest
+    container_name: mysql_db
+    command: --default-authentication-plugin=mysql_native_password --init-file="/tmp/database/initial_db.sql"
+    volumes:
+      - ./data:/var/lib/mysql
+      - ./dump.sql:/tmp/database/initial_db.sql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ce61649168c4550c2f7acab92354dc6e
+      MYSQL_DATABASE: develop
+      MYSQL_USER: panda
+      MYSQL_PASSWORD: ce61649168c4550c2f7acab92354dc6e
+    ports:
+      - 3306:3306
+
+  web:
+    build:
+      context: .
+      dockerfile: dockerfile
+    container_name: php-server
+    depends_on:
+      - mysql_db
+      - composer
+    volumes:
+      - ./www:/var/www/html/
+      - ./composer/vendor:/var/www/html/vendor/
+    ports:
+      - 80:80
