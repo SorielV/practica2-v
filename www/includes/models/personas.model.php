@@ -4,8 +4,8 @@ class Personas {
 	
 	public $id;
 	public $nombre;
-  	public $direccion;
-  	public $telefono;
+  public $direccion;
+  public $telefono;
 	public $fechaCreacion;
 	
 	public static function getBySql($sql) {
@@ -117,9 +117,10 @@ class Personas {
 		$object = new self;
 		$object->id = $id;
 		$object->nombre = $nombre;
-    	$object->direccion = $direccion;
-    	$object->telefono = $telefono;
-		$object->fechaCreacion = $fechaCreacion;
+    $object->direccion = $direccion;
+    $object->telefono = $telefono;
+    $object->fechaCreacion = $fechaCreacion;
+
 		return $object;
 	}
 	

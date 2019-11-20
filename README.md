@@ -18,7 +18,26 @@
 
 5e6c0acd8315d04ad0b8b44172a8dd1eb0ad1e75
 
-
 [HerokuApp](https://practica2-v.herokuapp.com/)
 
 [Cypress](https://dashboard.cypress.io/#/projects/7cmhy1/runs)
+
+## Docker
+
+### Pre-Configuracion
+
+Configurar .env
+
+```ssh
+vim ./www/.env
+DATABASE_HOST="mysql_db"
+DATABASE_NAME="develop"
+DATABASE_USER="panda"
+DATABASE_PASSWORD="ce61649168c4550c2f7acab92354dc6e"
+```
+
+### Development
+
+```ssh
+docker-composer up
+```

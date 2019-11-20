@@ -15,7 +15,7 @@ class Database extends mysqli
 		$this->password = DATABASE_PASSWORD;
 		$this->database = DATABASE_NAME;	
 		
-	    // Open database connection
+	  // Open database connection
 		parent::__construct($this->hostname, $this->username, $this->password, $this->database);
 		parent::set_charset("utf8");
 	}
